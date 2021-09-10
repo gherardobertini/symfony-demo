@@ -9,7 +9,7 @@ runtime:
         - sodium
         - iconv
         - ctype
-        
+        - pdo_pgsql
 
 #variables:
 #    php:
@@ -20,6 +20,9 @@ build:
     flavor: none
 
 disk: 512
+
+relationships:
+    database: "db:postgresql"
 
 web:
     locations:
