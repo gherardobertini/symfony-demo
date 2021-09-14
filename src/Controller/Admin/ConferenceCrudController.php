@@ -31,6 +31,7 @@ class ConferenceCrudController extends AbstractCrudController
         return [
             TextField::new('city', 'City')->setHelp('Location of the conference'),
             TextField::new('year')->setHelp('Year of the event'),
+            TextField::new('slug')->setHelp('set "-" to force calculate slug'),
             BooleanField::new('isInternational', 'Is it International event?'),
             AssociationField::new('comments')->hideOnForm()
         ];
