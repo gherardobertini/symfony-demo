@@ -48,7 +48,7 @@ class CommentRepository extends ServiceEntityRepository
             ->andWhere('c.state = :state_rejected or c.state = :state_spam')
             ->andWhere('c.createdAt < :date')
             ->setParameters([
-                'state_rejected' => 'rejected'
+                'state_rejected' => 'rejected',
                 'state_spam' => 'spam',
                 'date' => new \DateTime(-self::DAYS_BEFORE_REJECTED_REMOVAL.' days'),
             ])
