@@ -17,3 +17,5 @@ framework:
         log: true
 
     #ide: 'vscode://open?url=file://%%f&line=%%l'
+
+    http_cache: true
