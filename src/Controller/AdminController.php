@@ -15,6 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Workflow\Registry;
 use Twig\Environment;
 
+#[Route('/admin')]
 class AdminController extends AbstractController
 {
     private $twig;
@@ -31,7 +32,7 @@ class AdminController extends AbstractController
         $this->bus = $bus;
     }
 
-    #[Route('/admin/comment/review/{id}', name: 'review_comment')]
+    #[Route('/comment/review/{id}', name: 'review_comment')]
     public function reviewComment(
         Request $request,
         Comment $comment,
@@ -61,7 +62,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/http-cache/{uri<.*>}', methods: ['PURGE'])]
+    #[Route('/http-cache/{uri<.*>}', methods: ['PURGE'])]
     public function purgeHttpCache(
         KernelInterface $kernel,
         Request $request,
