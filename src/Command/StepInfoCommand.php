@@ -23,10 +23,6 @@ class StepInfoCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        
-        $process->mustRun();
-        $output->write($process->getOutput());
-
         $step = $this->cache->get('app.current_step', function ($item) {
             $process = new Process(['git', 'tag', '-l', '--points-at', 'HEAD']);
             $process->mustRun();
